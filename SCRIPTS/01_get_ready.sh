@@ -20,12 +20,14 @@ immortalwrt_luci_repo="https://github.com/immortalwrt/luci.git"
 lede_repo="https://github.com/coolsnowwolf/lede.git"
 lede_luci_repo="https://github.com/coolsnowwolf/luci.git"
 lede_pkg_repo="https://github.com/coolsnowwolf/packages.git"
-openwrt_repo="https://github.com/openwrt/openwrt.git"
+#openwrt_repo="https://github.com/openwrt/openwrt.git"
+openwrt_repo="https://github.com/Hdragon112/openwrt"
 openwrt_pkg_repo="https://github.com/openwrt/packages.git"
 openwrt_luci_repo="https://github.com/openwrt/luci.git"
 lienol_repo="https://github.com/Lienol/openwrt.git"
 lienol_pkg_repo="https://github.com/Lienol/openwrt-package"
-openwrt_add_repo="https://github.com/QiuSimons/OpenWrt-Add.git"
+#openwrt_add_repo="https://github.com/QiuSimons/OpenWrt-Add.git"
+openwrt_add_repo="https://github.com/Hdragon112/OpenWrt-Add"
 openwrt_node_repo="https://github.com/nxhack/openwrt-node-packages.git"
 passwall_pkg_repo="https://github.com/xiaorouji/openwrt-passwall-packages"
 passwall_luci_repo="https://github.com/xiaorouji/openwrt-passwall"
@@ -48,8 +50,8 @@ natmap_repo="https://github.com/blueberry-pie-11/luci-app-natmap"
 xwrt_repo="https://github.com/QiuSimons/openwrt-natflow"
 
 # 开始克隆仓库，并行执行
-clone_repo $openwrt_repo $latest_release openwrt &
-#clone_repo $openwrt_repo openwrt-25.12 openwrt &
+#clone_repo $openwrt_repo $latest_release openwrt &
+clone_repo $openwrt_repo openwrt-25.12 openwrt &
 clone_repo $openwrt_repo openwrt-25.12 openwrt_snap &
 clone_repo $immortalwrt_repo openwrt-24.10 immortalwrt_24 &
 clone_repo $immortalwrt_repo openwrt-23.05 immortalwrt_23 &
