@@ -164,8 +164,8 @@ pushd feeds/luci
 wget -qO- https://github.com/sbwml/r4s_build_script/raw/refs/heads/master/openwrt/patch/luci/applications/luci-app-package-manager/0001-luci-app-package-manager-support-installing-uploaded.patch | patch -p1
 popd
 # rust
-wget https://github.com/rust-lang/rust/commit/cdae267.patch -O feeds/packages/lang/rust/patches/cdae267.patch
-sed -i 's/--set=llvm\.download-ci-llvm=true/--set=llvm.download-ci-llvm=false/' feeds/packages/lang/rust/Makefile
+# wget https://github.com/rust-lang/rust/commit/cdae267.patch -O feeds/packages/lang/rust/patches/cdae267.patch
+# sed -i 's/--set=llvm\.download-ci-llvm=true/--set=llvm.download-ci-llvm=false/' feeds/packages/lang/rust/Makefile
 # mount cgroupv2
 pushd feeds/packages
 #patch -p1 <../../../PATCH/pkgs/cgroupfs-mount/0001-fix-cgroupfs-mount.patch
@@ -226,7 +226,7 @@ echo > ./feeds/packages/utils/watchcat/files/watchcat.config
 # 默认开启 Irqbalance
 #sed -i "s/enabled '0'/enabled '1'/g" feeds/packages/utils/irqbalance/files/irqbalance.config
 # Build date, add date prefix
-sed -i '/#Dropbear/i\sed -i '\''/BUILD_ID/d'\'' /etc/os-release\necho "BUILD_ID='\''R261020" >> /etc/os-release' package/new/addition-trans-zh/files/zzz-default-settings
+sed -i '/#Dropbear/i\sed -i '\''/BUILD_ID/d'\'' /etc/os-release\necho "BUILD_ID='\''R261024" >> /etc/os-release' package/new/addition-trans-zh/files/zzz-default-settings
 sed -i "s|\$(VERSION_DIST_SANITIZED)-|\$(VERSION_DIST_SANITIZED)-$(TZ=Asia/Shanghai date +%Y%m%d)-|" include/image.mk
 
 # 使用 TEO CPU 空闲调度器
